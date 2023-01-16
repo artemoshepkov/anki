@@ -6,7 +6,17 @@
         xmlns:local="clr-namespace:Anki"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <StackPanel>
 
-    </Grid>
+        <ListBox ItemsSource="{Binding Decks}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <Button Content="Add new deck" Command="{Binding AddNewDeckCommand}"/>
+    
+    </StackPanel>
 </Window>
